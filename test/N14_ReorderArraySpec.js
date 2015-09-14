@@ -8,21 +8,21 @@ describe("面试题14：调整数组顺序使奇数位于偶数前面", function
 
   // 1. 功能测试
   it("奇数偶数交替出现", function() {
-    var nums = [1,2,3,4,5];
+    var nums = [1, 2, 3, 4, 5];
     reorderArray(nums, isEven);
-    expect(nums).toEqual([1,5,3,4,2]);
+    expect(nums).toEqual([1, 5, 3, 4, 2]);
   });
 
   it("奇数全在偶数前面", function() {
-    var nums = [1,3,5,4,6,8];
+    var nums = [1, 3, 5, 4, 6, 8];
     reorderArray(nums, isEven);
-    expect(nums).toEqual([1,3,5,4,6,8]);
+    expect(nums).toEqual([1, 3, 5, 4, 6, 8]);
   });
 
   it("偶数全在奇数前面", function() {
-    var nums = [2,4,6,3,5];
+    var nums = [2, 4, 6, 3, 5];
     reorderArray(nums, isEven);
-    expect(nums).toEqual([5,3,6,4,2]);
+    expect(nums).toEqual([5, 3, 6, 4, 2]);
   });
 
   // 2. 边界值

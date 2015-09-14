@@ -11,9 +11,11 @@ function getUglyNumber(index) {
 		return 0;
 	}
 
-	var uglyNums = [1];
-	var mult2 = 0, mult3 = 0, mult5 = 0;
-	var min, len;
+	var uglyNums = [1],
+		mult2 = 0,
+		mult3 = 0,
+		mult5 = 0,
+		min, len;
 
 	while (uglyNums.length < index) {
 		min = Math.min(uglyNums[mult2] * 2, uglyNums[mult3] * 3, uglyNums[mult5] * 5);
@@ -21,13 +23,13 @@ function getUglyNumber(index) {
 
 		len = uglyNums.length;
 		while (uglyNums[mult2] * 2 <= uglyNums[len - 1]) {
-			++ mult2;
+			++mult2;
 		}
 		while (uglyNums[mult3] * 3 <= uglyNums[len - 1]) {
-			++ mult3;
+			++mult3;
 		}
 		while (uglyNums[mult5] * 5 <= uglyNums[len - 1]) {
-			++ mult5;
+			++mult5;
 		}
 	}
 

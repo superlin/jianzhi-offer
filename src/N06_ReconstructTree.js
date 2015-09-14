@@ -13,8 +13,8 @@ function reconstructTree(preorder, inorder) {
 	}
 
 	function reconstruct(preorder, sp, ep, inorder, si, ei) {
-		var rootVal = preorder[sp];
-		var root = new TreeNode(rootVal);
+		var rootVal = preorder[sp],
+			root = new TreeNode(rootVal);
 
 		// 只有一个节点
 		// 中序和先序值相等直接返回节点
@@ -29,7 +29,7 @@ function reconstructTree(preorder, inorder) {
 
 		var rootIn = si;
 		while (rootIn <= ei && inorder[rootIn] !== rootVal) {
-			rootIn ++;
+			rootIn++;
 		}
 
 		// 没找到匹配的中序根节点返回错误
@@ -37,8 +37,8 @@ function reconstructTree(preorder, inorder) {
 			throw "先序和中序序列不匹配";
 		}
 
-		var leftLen = rootIn - si;
-		var leftPreEnd = sp + leftLen;
+		var leftLen = rootIn - si,
+			leftPreEnd = sp + leftLen;
 
 		// 构建左子树
 		if (leftLen > 0) {
@@ -55,4 +55,3 @@ function reconstructTree(preorder, inorder) {
 
 	return reconstruct(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
 }
-

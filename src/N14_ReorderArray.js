@@ -12,17 +12,17 @@ function reorderArray(nums, check) {
 	}
 
 	var begin = 0,
-			end = nums.length - 1,
-			temp;
+		end = nums.length - 1,
+		temp;
 
 	while (begin < end) {
 
 		while (begin < end && !check(nums[begin])) {
-			begin ++;
+			begin++;
 		}
 
 		while (begin < end && check(nums[end])) {
-			end --;
+			end--;
 		}
 
 		if (begin < end) {

@@ -14,8 +14,8 @@ function countOf1(n) {
 	// 数字转化为字符串处理
 	n = n + "";
 
-	var first = n[0] - '0';
-	var len = n.length;
+	var first = n[0] - '0',
+		len = n.length;
 
 	// 只有一位数，且大于0，则只有一个1
 	if (len === 1 && first > 0) {
@@ -28,16 +28,17 @@ function countOf1(n) {
 	// 2.（除了最高位之外）分段为1346-11345,11346-21345，每段10000个数，由于不考虑最高位，相当于00000-10000和10000-20000
 	// 选定某一位为1，其余三位可以是0-9的任意数，因此每段4*10e3=4000个，段数为最高位的大小，上面例子最高位为2，即段数2
 	// 3.按前面的方法递归计算剩余的1-1345的1的个数
-	var numFirstDigit = 0;
-	var remain = parseInt(n.slice(1), 10);
+	var numFirstDigit = 0,
+		remain = parseInt(n.slice(1), 10);
+
 	if (first > 1) {
 		numFirstDigit = powerBase10(len - 1);
 	} else if (first === 1) {
 		numFirstDigit = remain + 1;
 	}
 
-	var numFirstDigits = first * (len - 1) * powerBase10(len - 2);
-	var numRecursive = countOf1(remain);
+	var numFirstDigits = first * (len - 1) * powerBase10(len - 2),
+		numRecursive = countOf1(remain);
 
 	return numFirstDigit + numFirstDigits + numRecursive;
 }

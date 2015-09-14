@@ -8,11 +8,12 @@
 'use strict';
 
 function copyComplexList(root) {
-	if (root === null ) {
+	if (root === null) {
 		return null;
 	}
 	// 复制每个节点
-	var node = root, ptr = null;
+	var node = root,
+		ptr = null;
 
 	while (node) {
 		ptr = new ComplexListNode(node.val);
@@ -33,7 +34,8 @@ function copyComplexList(root) {
 		node = cloned.next;
 	}
 	// 拆分链表
-	var clonedRoot = null, clonedNode = null;
+	var clonedRoot = null,
+		clonedNode = null;
 	node = root;
 
 	if (node !== null) {

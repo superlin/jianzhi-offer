@@ -12,19 +12,19 @@ function searchInArray(arr, target) {
 	}
 
 	var found = false,
-			rows = arr.length,
-			cols = arr[0].length,
-			row = 0,
-			col = cols - 1;
+		rows = arr.length,
+		cols = arr[0].length,
+		row = 0,
+		col = cols - 1;
 
 	while (row < rows && col >= 0) {
 		if (arr[row][col] === target) {
 			found = true;
 			break;
 		} else if (arr[row][col] > target) {
-			-- col;
+			--col;
 		} else {
-			++ row;
+			++row;
 		}
 	}
 

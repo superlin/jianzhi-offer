@@ -30,8 +30,8 @@ function inversePairs(nums) {
 		// 这样可以省去归并排序中将部分有序的数组往回复制的过程
 		// 但是最后的nums数组就不一定是有序的了（来回拷贝偶数次则nums有序，否则copy有序）
 		// 这种方法理解不太容易
-		var left = countInversePairs(copy, nums, start, start + len);
-		var right = countInversePairs(copy, nums, start + len + 1, end);
+		var left = countInversePairs(copy, nums, start, start + len),
+			right = countInversePairs(copy, nums, start + len + 1, end);
 
 		// 可以将下面注释部分取消注释，并注释前面两句
 		// 这样就和归并排序的过程一样，但是比较容易理解
@@ -39,15 +39,15 @@ function inversePairs(nums) {
 		// var left = countInversePairs(nums, copy, start, start + len);
 		// var right = countInversePairs(nums, copy, start + len + 1, end);
 
-		var i = start + len;
-		var j = end;
-		var indexCopy = end;
-		var count = 0;
+		var i = start + len,
+			j = end,
+			indexCopy = end,
+			count = 0;
 
 		while (i >= start && j >= start + len + 1) {
 			if (nums[i] > nums[j]) {
 				copy[indexCopy] = nums[i];
-				count += j - start -len;
+				count += j - start - len;
 				i--;
 			} else {
 				copy[indexCopy] = nums[j];

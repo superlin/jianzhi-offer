@@ -12,8 +12,8 @@ function findGreatestSum(nums) {
 		return false;
 	}
 
-	var currentSum = 0;
-	var greatestSum = -Infinity;
+	var currentSum = 0,
+		greatestSum = -Infinity;
 
 	nums = Array.prototype.slice.call(nums, 0);
 

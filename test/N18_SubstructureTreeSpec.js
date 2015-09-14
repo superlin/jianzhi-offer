@@ -7,7 +7,7 @@ describe("面试题18：树的子结构", function() {
   var node4 = new TreeNode(9);
   var node5 = new TreeNode(2);
   var node6 = new TreeNode(4);
-	var node7 = new TreeNode(7);
+  var node7 = new TreeNode(7);
 
   rootA.left = node2;
   rootA.right = node3;

@@ -6,7 +6,7 @@
 
 'use strict';
 
-function MinStack(){
+function MinStack() {
 	this.minval = false;
 	this.vals = [];
 }
@@ -20,7 +20,8 @@ MinStack.prototype.pop = function() {
 		return false;
 	}
 
-	var val = this.vals.pop(), res;
+	var val = this.vals.pop(),
+		res;
 	if (val < 0) {
 		res = this.minval;
 		this.minval -= val;
@@ -34,7 +35,7 @@ MinStack.prototype.push = function(val) {
 	if (this.vals.length === 0) {
 		this.vals.push(0);
 		this.minval = val;
-	} else{
+	} else {
 		this.vals.push(val - this.minval);
 		if (val < this.minval) {
 			this.minval = val;

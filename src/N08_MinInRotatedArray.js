@@ -14,9 +14,9 @@ function minInRotatedArray(nums) {
 	}
 
 	var left = 0,
-			right = nums.length - 1,
-			mid = left,
-			mustloop = false;
+		right = nums.length - 1,
+		mid = left,
+		mustloop = false;
 
 	while (nums[left] >= nums[right]) {
 		if (right - left === 1) {

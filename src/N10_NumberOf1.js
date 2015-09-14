@@ -8,11 +8,12 @@
 'use strict';
 
 function numberOf1(num) {
-	var count = 0;
-	var base = 1;
+	var count = 0,
+		base = 1;
+
 	while (base) {
 		if (num & base) {
-			count ++;
+			count++;
 		}
 		// >>>操作用于unsigned int
 		base = (base << 1) >>> 0;
